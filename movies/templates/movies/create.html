@@ -2,4 +2,11 @@
 
 {% block content %}
   <h1>CREATE</h1>
+  <hr><br>
+  <form action="{% url 'movies:create' %}" method='POST' enctype='multipart/form-data'></form>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="submit"><hr>
+    
 {% endblock content %}
