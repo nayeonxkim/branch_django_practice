@@ -12,7 +12,7 @@ def create(requset):
         form = MovieForm(requset.POST)
         if form.is_valid():
             form.save()
-            return redirect('movies:index')
+            return redirect('movies:detail')
     
     context = {'form': form}
     return render(requset, 'movies/create.html', context)
